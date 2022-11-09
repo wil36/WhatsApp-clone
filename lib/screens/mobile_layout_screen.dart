@@ -8,13 +8,14 @@ class MobileLayoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 4,
+        initialIndex: 1,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: appBarColor,
             elevation: 0,
             title: const Text(
-              'Whatsapp',
+              'Wilfrid',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 20,
@@ -41,13 +42,18 @@ class MobileLayoutScreen extends StatelessWidget {
             bottom: const TabBar(
               tabs: [
                 Tab(
-                  text: 'CHATS',
+                  child: Icon(
+                    Icons.camera_alt_rounded,
+                  ),
                 ),
                 Tab(
-                  text: 'STATUS',
+                  text: 'DISC.',
                 ),
                 Tab(
-                  text: 'CALLS',
+                  text: 'STATUT',
+                ),
+                Tab(
+                  text: 'APPELS',
                 ),
               ],
               indicatorColor: tabColor,
@@ -60,6 +66,14 @@ class MobileLayoutScreen extends StatelessWidget {
             ),
           ),
           body: const ContactList(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: tabColor,
+            child: const Icon(
+              Icons.comment,
+              color: Colors.white,
+            ),
+          ),
         ));
   }
 }
